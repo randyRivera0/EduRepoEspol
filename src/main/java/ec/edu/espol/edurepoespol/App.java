@@ -35,7 +35,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        
+        /*
         // Insert the new administrador record into the database
         try {
                        
@@ -57,7 +57,7 @@ public class App extends Application {
         catch (SQLException e) {
             e.printStackTrace();
         }
-        
+        */
         launch();
     }
 
