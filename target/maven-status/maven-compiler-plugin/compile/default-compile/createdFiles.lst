@@ -1,0 +1,11 @@
+ec\edu\espol\edurepoespol\BorrarController.class
+ec\edu\espol\edurepoespol\CrearController.class
+ec\edu\espol\edurepoespol\AdminController.class
+ec\edu\espol\edurepoespol\ResultadoController.class
+ec\edu\espol\edurepoespol\LoginController.class
+ec\edu\espol\edurepoespol\InicioController.class
+ec\edu\espol\edurepoespol\App.class
+ec\edu\espol\edurepoespol\DescargasController.class
+module-info.class
+ec\edu\espol\edurepoespol\MateriaController.class
+ec\edu\espol\edurepoespol\DataBaseConnection.class

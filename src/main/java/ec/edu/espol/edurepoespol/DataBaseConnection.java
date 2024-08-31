@@ -1,3 +1,5 @@
+package ec.edu.espol.edurepoespol;
+
 
 import java.util.Scanner;
 import java.sql.Connection;
