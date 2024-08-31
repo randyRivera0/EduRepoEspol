@@ -30,6 +30,8 @@ public class InicioController {
     Button paginaInicio;
     @FXML
     Button misDescargas;
+    @FXML
+    Button salir;
 
     @FXML
     private void switchToSecondary() throws IOException {
@@ -110,5 +112,23 @@ public class InicioController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    
+    @FXML
+    private void handleBackButtonAction(ActionEvent event) {
+        try {
+            // Cargar la ventana anterior desde su archivo FXML
+            Parent ventanaAnterior = FXMLLoader.load(getClass().getResource("login.fxml"));
+
+            // Obtener el Stage actual
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+
+            // Configurar la nueva escena
+            Scene scene = new Scene(ventanaAnterior);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

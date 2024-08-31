@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.edurepoespol.MateriaController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.edurepoespol.MateriaController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="71.0" prefWidth="600.0" style="-fx-background-color: #051f5f;" BorderPane.alignment="CENTER">
          <children>
@@ -30,27 +30,27 @@
             </Button>
             <Button fx:id="misDescargas" mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Mis descargas" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="15.0" />
+                  <Insets left="10.0" />
                </HBox.margin>
             </Button>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mis puntuaciones">
                <HBox.margin>
-                  <Insets left="15.0" />
+                  <Insets left="10.0" />
                </HBox.margin>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Idioma">
-               <HBox.margin>
-                  <Insets left="15.0" />
-               </HBox.margin>
-            </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Salir">
+            <Button fx:id="regresar" mnemonicParsing="false" onAction="#handleBackButtonAction" style="-fx-background-color: #051f5f;" text="Regresar" textFill="WHITE">
                <font>
-                  <Font name="System Bold Italic" size="12.0" />
+                  <Font name="Arial Bold Italic" size="13.0" />
                </font>
                <HBox.margin>
-                  <Insets left="25.0" />
+                  <Insets left="20.0" />
                </HBox.margin>
-            </Text>
+            </Button>
+            <Button fx:id="salir" mnemonicParsing="false" onAction="#handleLoginButtonAction" style="-fx-background-color: #051f5f;" text="Salir" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="13.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
    </top>

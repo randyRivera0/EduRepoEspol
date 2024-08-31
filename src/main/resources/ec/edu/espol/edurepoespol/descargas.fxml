@@ -46,14 +46,14 @@
                   <Insets left="15.0" />
                </HBox.margin>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Salir">
+            <Button fx:id="salir" mnemonicParsing="false" onAction="#handleLoginButtonAction" style="-fx-background-color: #051f5f;" text="Salir" textFill="WHITE">
                <font>
-                  <Font name="System Bold Italic" size="12.0" />
+                  <Font name="Arial Bold Italic" size="13.0" />
                </font>
                <HBox.margin>
-                  <Insets left="25.0" />
+                  <Insets left="10.0" />
                </HBox.margin>
-            </Text>
+            </Button>
          </children>
       </HBox>
    </top>
