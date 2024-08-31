@@ -4,29 +4,59 @@
  */
 package ec.edu.espol.edurepoespol;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author User Dell
  */
-public class Actor {
-    private int actorId;
+public class User {
+    private int id;
     private String firstName;
     private String lastName;
+    private String email;
+    private String carrera;
+    private LocalDateTime fechaReg;
+    private boolean isStudent;
+    private boolean isProfesor;
+    private boolean isTeachingAssistant;
+    private boolean idAdmin;
+
+    public User(String carrera, boolean isStudent, boolean isProfesor, boolean isTeachingAssistant) {
+        this.carrera = carrera;
+        this.isStudent = isStudent;
+        this.isProfesor = isProfesor;
+        this.isTeachingAssistant = isTeachingAssistant;
+    }
+
+    public boolean isIsStudent() {
+        return isStudent;
+    }
+
+    public boolean isProfesor() {
+        return isProfesor;
+    }
+
+    public boolean isTeachingAssistant() {
+        return isTeachingAssistant;
+    }
+    
+    
 
     // Constructor, getters, setters, etc.
-    public Actor(int actorId, String firstName, String lastName) {
-        this.actorId = actorId;
+    public User(int actorId, String firstName, String lastName) {
+        this.id = actorId;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
     // Getters and Setters
-    public int getActorId() {
-        return actorId;
+    public int getId() {
+        return id;
     }
 
-    public void setActorId(int actorId) {
-        this.actorId = actorId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {

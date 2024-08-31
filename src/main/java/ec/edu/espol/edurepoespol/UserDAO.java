@@ -16,15 +16,16 @@ import java.util.List;
  *
  * @author User Dell
  */
-public class ActorDAO {
+public class UserDAO implements DAO<User>{
     private Connection connection;
 
-    public ActorDAO() {
+    public UserDAO() {
         connection = DataBaseConnection.getInstance().getConnection();
     }
 
-    // Create or Insert new Actor
-    public void addActor(Actor actor) {
+    // Create or Insert new User
+    @Override
+    public void insert(User actor) {
         String query = "INSERT INTO actor (first_name, last_name) VALUES (?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, actor.getFirstName());
@@ -36,13 +37,14 @@ public class ActorDAO {
     }
 
     // Read or Retrieve all Actors
-    public List<Actor> getAllActors() {
-        List<Actor> actors = new ArrayList<>();
+    @Override
+    public List<User> getAll() {
+        List<User> actors = new ArrayList<>();
         String query = "SELECT * FROM actor";
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                Actor actor = new Actor(
+                User actor = new User(
                         rs.getInt("actor_id"),
                         rs.getString("first_name"),
                         rs.getString("last_name"));
@@ -54,21 +56,22 @@ public class ActorDAO {
         return actors;
     }
 
-    // Update Actor
-    public void updateActor(Actor actor) {
+    // Update User
+    public void update(User actor) {
         String query = "UPDATE actor SET first_name = ?, last_name = ? WHERE actor_id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, actor.getFirstName());
             stmt.setString(2, actor.getLastName());
-            stmt.setInt(3, actor.getActorId());
+            stmt.setInt(3, actor.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // Delete Actor
-    public void deleteActor(int actorId) {
+    // Delete User
+    @Override
+    public void delete(int actorId) {
         String query = "DELETE FROM actor WHERE actor_id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, actorId);
@@ -76,5 +79,31 @@ public class ActorDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public User getById(int id) throws SQLException {
+        String query = "SELECT * FROM administrador WHERE idAdmin = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new User(rs.getString("carrera"), rs.getBoolean("esEstudiante"), rs.getBoolean("esProfesor"), rs.getBoolean("esAyudate"));
+            }
+        }
+        return null;
+    }
+    
+    
+    public User getByEmail(String nombre) throws SQLException {
+        String query = "SELECT * FROM usuario WHERE nombre = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, nombre);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new User(rs.getString("carrera"), rs.getBoolean("esEstudiante"), rs.getBoolean("esProfesor"), rs.getBoolean("esAyudante"));
+            }
+        }
+        return null;
     }
 }

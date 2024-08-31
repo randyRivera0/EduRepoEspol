@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 
 /**
@@ -30,10 +31,17 @@ public class MateriaController implements Initializable {
     Button paginaInicio;
     @FXML
     Button misDescargas;
+    @FXML
+    TextFlow textFlowFiles;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
+    public void initializeData(String data){
+        Text text = new Text(data);
+        text.setWrappingWidth(400);      // Set wrapping width for the text
+        textFlowFiles.getChildren().add(text);
+    }
 }

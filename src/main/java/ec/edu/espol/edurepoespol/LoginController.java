@@ -17,6 +17,23 @@ public class LoginController {
 
     @FXML
     private void switchToPrimary() throws IOException {
-        App.setRoot("inicio");
+        String email = usuario.getText();
+        UserDAO userDao = new UserDAO();
+        User user;
+            try{
+                user = userDao.getByEmail(email);
+                if(user.isProfesor() || user.isTeachingAssistant()){
+                App.setRoot("admin");
+            }
+    //        AdministradorDAO administradorDAO = new AdministradorDAO();
+    //        administradorDAO.getById(0);
+            else{
+                App.setRoot("inicio");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
+    
 }

@@ -5,12 +5,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class InicioController {
+    
+    String data;
     
     @FXML
     TextField materia;
@@ -29,7 +37,7 @@ public class InicioController {
     }
     
     @FXML
-    private void handleSearchFiles() {
+    private void handleSearchFiles() throws IOException {
         String subjectId = codigo.getText();
         if (subjectId.isEmpty()) {
             showAlert("Error", "Subject ID cannot be empty.");
@@ -55,6 +63,8 @@ public class InicioController {
                 String fileName = resultSet.getString("nombre");
                 result.append(fileName).append("\n");
             }
+            
+            data = result.toString();
 
             // Show results in an alert
             showAlert("Search Results", result.toString());
@@ -62,10 +72,33 @@ public class InicioController {
             // Close resources
             resultSet.close();
             statement.close();
-            connection.close();
+            
+            switchScene();
 
         } catch (SQLException e) {
             showAlert("Database Error", "An error occurred while accessing the database: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+     @FXML
+    private void switchScene() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("materia.fxml"));
+            Parent root = loader.load();
+
+            // Get the next scene's controller
+            MateriaController nextSceneController = loader.getController();
+
+            // Pass data to the next scene
+            
+            nextSceneController.initializeData(data);
+
+            // Switch the scene
+             Stage stage = (Stage) codigo.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
