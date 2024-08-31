@@ -13,8 +13,7 @@ public class Administrador {
     private String correo;
     private int nivel;
 
-    public Administrador(int idAdmin, String correo, int nivel) {
-        this.idAdmin = idAdmin;
+    public Administrador(String correo, int nivel) {
         this.correo = correo;
         this.nivel = nivel;
     }

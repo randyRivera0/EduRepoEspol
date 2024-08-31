@@ -41,7 +41,7 @@ public class AdministradorDAO implements DAO<Administrador> {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                return new Administrador(rs.getInt("idAdmin"), rs.getString("correo"), rs.getInt("nivel"));
+                return new Administrador(rs.getString("correo"), rs.getInt("nivel"));
             }
         }
         return null;
@@ -54,7 +54,7 @@ public class AdministradorDAO implements DAO<Administrador> {
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                admins.add(new Administrador(rs.getInt("idAdmin"), rs.getString("correo"), rs.getInt("nivel")));
+                admins.add(new Administrador(rs.getString("correo"), rs.getInt("nivel")));
             }
         }
         return admins;

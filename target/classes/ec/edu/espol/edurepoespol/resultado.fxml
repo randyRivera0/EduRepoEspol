@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.edurepoespol.ResultadoController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="71.0" prefWidth="600.0" style="-fx-background-color: #051f5f;" BorderPane.alignment="CENTER">
          <children>
@@ -24,12 +24,12 @@
                   <Image url="@../../../../img/logo.png" />
                </image>
             </ImageView>
-            <Button mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Página de Inicio" textFill="WHITE">
+            <Button fx:id="paginaInicio" mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Página de Inicio" textFill="WHITE">
                <HBox.margin>
                   <Insets left="30.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Mis descargas" textFill="WHITE">
+            <Button fx:id="misDescargas" mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Mis descargas" textFill="WHITE">
                <HBox.margin>
                   <Insets left="15.0" />
                </HBox.margin>
@@ -60,7 +60,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="35.0" prefWidth="600.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+                  <Text fx:id="facultad" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
                      <font>
                         <Font name="Arial Bold" size="16.0" />
                      </font>
@@ -80,7 +80,7 @@
                         <Insets left="20.0" top="20.0" />
                      </HBox.margin>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                  <Text fx:id="materia" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
                      </HBox.margin>
@@ -100,7 +100,7 @@
                         <Font name="Arial" size="16.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                  <Text fx:id="codigo" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
                      </HBox.margin>
@@ -110,7 +110,7 @@
                   </Text>
                </children>
             </HBox>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" underline="true">
+            <Text fx:id="nombreRecurso" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" underline="true">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -120,7 +120,7 @@
             </Text>
             <HBox prefHeight="181.0" prefWidth="600.0">
                <children>
-                  <ScrollPane prefHeight="181.0" prefWidth="323.0">
+                  <ScrollPane fx:id="archivo" prefHeight="181.0" prefWidth="323.0">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
                     </content>
@@ -140,7 +140,7 @@
                                     <Insets left="5.0" top="5.0" />
                                  </HBox.margin>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                              <Text fx:id="fechaPublicacion" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                                  <HBox.margin>
                                     <Insets left="5.0" top="5.0" />
                                  </HBox.margin>
@@ -160,7 +160,7 @@
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                              <Text fx:id="autor" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                                  <font>
                                     <Font name="Arial" size="12.0" />
                                  </font>
@@ -180,7 +180,7 @@
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                              <Text fx:id="tipoRecurso" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                                  <font>
                                     <Font name="Arial" size="12.0" />
                                  </font>
@@ -200,7 +200,7 @@
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                              <Text fx:id="tipoDocumento" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                                  <font>
                                     <Font name="Arial" size="12.0" />
                                  </font>
@@ -220,7 +220,7 @@
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                              <Text fx:id="calificacion" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                                  <font>
                                     <Font name="Arial" size="12.0" />
                                  </font>
@@ -230,14 +230,14 @@
                               </Text>
                            </children>
                         </HBox>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #a9b8d8;" text="Ver comentarios" underline="true">
+                        <Button fx:id="comentarios" mnemonicParsing="false" style="-fx-background-color: #a9b8d8;" text="Ver comentarios" underline="true">
                            <font>
                               <Font name="Arial Italic" size="12.0" />
                            </font>
                         </Button>
                         <HBox alignment="CENTER" prefHeight="40.0" prefWidth="263.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="DESCARGAR" textFill="WHITE">
+                              <Button fx:id="descargar" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="DESCARGAR" textFill="WHITE">
                                  <font>
                                     <Font name="Arial Bold" size="13.0" />
                                  </font>

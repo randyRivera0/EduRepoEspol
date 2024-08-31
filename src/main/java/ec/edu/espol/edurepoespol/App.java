@@ -41,7 +41,7 @@ public class App extends Application {
                        
             AdministradorDAO administradorDAO = new AdministradorDAO();
             // Create a new Administrador object
-            Administrador administrador1 = new Administrador(6, "juan.perez@example.com", 1);
+            Administrador administrador1 = new Administrador("rariberm@espol.edu.ec", 1);
 
             administradorDAO.insert(administrador1);
             administradorDAO.getAll();
