@@ -24,7 +24,7 @@
                   <Insets left="20.0" top="15.0" />
                </HBox.margin>
             </ImageView>
-            <Button fx:id="paginaInicio" mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Página de Inicio" textFill="WHITE">
+            <Button mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Página de Inicio" textFill="WHITE">
                <HBox.margin>
                   <Insets left="30.0" top="20.0" />
                </HBox.margin>
@@ -32,7 +32,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="misDescargas" mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Mis descargas" textFill="WHITE">
+            <Button mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="Mis descargas" textFill="WHITE">
                <HBox.margin>
                   <Insets left="15.0" top="20.0" />
                </HBox.margin>

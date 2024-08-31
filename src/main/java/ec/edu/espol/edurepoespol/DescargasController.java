@@ -6,7 +6,10 @@ package ec.edu.espol.edurepoespol;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -15,9 +18,13 @@ import javafx.fxml.Initializable;
  */
 public class DescargasController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    Button paginaInicio;
+    @FXML
+    Button misDescargas;
+    @FXML
+    VBox material;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
