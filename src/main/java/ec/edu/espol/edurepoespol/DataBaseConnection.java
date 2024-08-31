@@ -22,7 +22,7 @@ public class DataBaseConnection {
     private Connection connection;
 
     // Database credentials and URL
-    private static final String URL = "jdbc:mysql://localhost:3306/sakila"; // Modify as per your DB
+    private static final String URL = "jdbc:mysql://localhost:3306/g2"; // Modify as per your DB
     private static final String USER = "root"; // Modify with your MySQL username
     private static final String PASSWORD = "admin"; // Modify with your MySQL password
 

@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  * JavaFX App
@@ -33,6 +35,29 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        
+        // Insert the new administrador record into the database
+        try {
+                       
+            AdministradorDAO administradorDAO = new AdministradorDAO();
+            // Create a new Administrador object
+            Administrador administrador1 = new Administrador(6, "juan.perez@example.com", 1);
+
+            administradorDAO.insert(administrador1);
+            administradorDAO.getAll();
+            System.out.println("Administrador inserted successfully.");
+ 
+        
+            List<Administrador> administradores = administradorDAO.getAll();
+            for (Administrador administrador : administradores) {
+                System.out.println(administrador.getCorreo());
+            }
+
+        } 
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
         launch();
     }
 
