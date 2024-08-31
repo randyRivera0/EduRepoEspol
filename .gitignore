@@ -1,0 +1,78 @@
+# Ignore build and NetBeans directories
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Ignore NetBeans-specific files
+*.orig
+*.rej
+*.log
+*.bak
+*.swp
+
+# Ignore compiled Java classes
+*.class
+
+# Ignore package files
+*.jar
+*.war
+*.ear
+
+# Ignore Maven and Gradle directories if using them
+/.mvn/
+/target/
+/.gradle/
+/build/
+
+# Ignore IntelliJ IDEA or Eclipse-specific files if someone uses them
+/.idea/
+/*.iml
+/.project
+/.classpath
+/.settings/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.out
+*.bak
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore generated files by JavaFX or FXML
+*.fxml~
+
+# Ignore environment-specific files
+.env
+
+# Additional files to ignore
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual machine crash logs
+hs_err_pid*
+replay_pid*
