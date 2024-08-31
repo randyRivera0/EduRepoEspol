@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -58,14 +59,14 @@
       </HBox>
    </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #444242; -fx-border-radius: 5; -fx-border-width: 5;" BorderPane.alignment="CENTER">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra todo el material de estudio que necesites aquí" textAlignment="CENTER">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra todo el material de estudio que necesites aquí" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar por materia:">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar por materia:">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -73,7 +74,28 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Text>
+            <TextField style="-fx-background-color: #9d9a9a;">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar por código:">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <TextField prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #9d9a9a;">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
          </children>
+         <BorderPane.margin>
+            <Insets bottom="40.0" left="100.0" right="100.0" top="40.0" />
+         </BorderPane.margin>
       </VBox>
    </center>
 </BorderPane>

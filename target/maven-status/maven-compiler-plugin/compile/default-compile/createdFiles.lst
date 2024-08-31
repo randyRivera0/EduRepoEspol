@@ -6,7 +6,7 @@ ec\edu\espol\edurepoespol\LoginController.class
 ec\edu\espol\edurepoespol\InicioController.class
 ec\edu\espol\edurepoespol\App.class
 ec\edu\espol\edurepoespol\DescargasController.class
+ec\edu\espol\edurepoespol\PDFViewer.class
 module-info.class
 ec\edu\espol\edurepoespol\MateriaController.class
 ec\edu\espol\edurepoespol\DataBaseConnection.class
-module-info.class
