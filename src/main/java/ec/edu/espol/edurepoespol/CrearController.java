@@ -6,7 +6,10 @@ package ec.edu.espol.edurepoespol;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -15,9 +18,15 @@ import javafx.fxml.Initializable;
  */
 public class CrearController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    TextField materia;
+    @FXML
+    TextField codigo;
+    @FXML
+    Button subirArchivo;
+    @FXML
+    Button crear;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
