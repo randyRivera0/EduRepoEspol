@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author User Dell
  */
-public class FileDAO implements DAO<File> {
+public class FileDAO implements DAO<Archivo> {
     private Connection connection;
 
     public FileDAO() {
@@ -25,7 +25,7 @@ public class FileDAO implements DAO<File> {
 
     // Create or Insert new User
     @Override
-    public void insert(File file) {
+    public void insert(Archivo file) {
         String query = "INSERT INTO archivo (nombre, ruta, codigo, matricula) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, file.getNombre());
@@ -40,13 +40,13 @@ public class FileDAO implements DAO<File> {
 
     // Read or Retrieve all Actors
     @Override
-    public List<File> getAll() {
-        List<File> actors = new ArrayList<>();
+    public List<Archivo> getAll() {
+        List<Archivo> actors = new ArrayList<>();
         String query = "SELECT * FROM actor";
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                File actor = new File(
+                Archivo actor = new Archivo(
                         rs.getString("nombre"),
                         rs.getString("codigo"),
                         rs.getString("matricula"));
@@ -60,7 +60,7 @@ public class FileDAO implements DAO<File> {
 
     
     @Override
-    public void update(File actor) {
+    public void update(Archivo actor) {
         String query = "UPDATE actor SET first_name = ?, last_name = ? WHERE actor_id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, actor.getNombre());
@@ -85,13 +85,13 @@ public class FileDAO implements DAO<File> {
     }
 
     @Override
-    public File getById(int id) throws SQLException {
+    public Archivo getById(int id) throws SQLException {
         String query = "SELECT * FROM administrador WHERE idAdmin = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-//                return new File(rs.getString("carrera"), rs.getBoolean("esEstudiante"), rs.getBoolean("esProfesor"), rs.getBoolean("esAyudate"));
+//                return new Archivo(rs.getString("carrera"), rs.getBoolean("esEstudiante"), rs.getBoolean("esProfesor"), rs.getBoolean("esAyudate"));
                 return null;
             }
         }

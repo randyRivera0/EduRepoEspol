@@ -8,7 +8,7 @@ package ec.edu.espol.edurepoespol;
  *
  * @author User Dell
  */
-public class File {
+public class Archivo {
     private int id;
     private String nombre;
     private String ruta;
@@ -16,7 +16,7 @@ public class File {
     private String codigo;
     private String matricula;
 
-    public File(String nombre, String codigo, String matricula) {
+    public Archivo(String nombre, String codigo, String matricula) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.matricula = matricula;

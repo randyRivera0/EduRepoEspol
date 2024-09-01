@@ -24,7 +24,7 @@ public class DataBaseConnection {
     // Database credentials and URL
     private static final String URL = "jdbc:mysql://localhost:3306/g1"; // Modify as per your DB
     private static final String USER = "root"; // Modify with your MySQL username
-    private static final String PASSWORD = "Dhasha2003"; // Modify with your MySQL password
+    private static final String PASSWORD = "admin"; // Modify with your MySQL password
 
     // Step 3: Make the constructor private to prevent instantiation
     private DataBaseConnection() {

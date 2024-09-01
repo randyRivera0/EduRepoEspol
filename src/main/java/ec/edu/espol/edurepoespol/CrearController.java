@@ -4,6 +4,7 @@
  */
 package ec.edu.espol.edurepoespol;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -24,6 +25,8 @@ import javafx.stage.Stage;
  */
 public class CrearController implements Initializable {
 
+    String nombreA;
+    
     @FXML
     TextField nombre;
     @FXML
@@ -60,14 +63,14 @@ public class CrearController implements Initializable {
     
     @FXML
     private void insertFile(ActionEvent event){
-        File file = new File(nombre.getText(), codigo.getText(), "101");
+        Archivo file = new Archivo(nombreA , codigo.getText(), "101");
         FileDAO fileDAO = new FileDAO();
         fileDAO.insert(file);
     }
     
     /*
     @FXML
-    private java.io.File openFileChooser(ActionEvent event) {
+    private java.io.Archivo openFileChooser(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos de texto (*.txt)", "*.txt"));
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
@@ -76,9 +79,9 @@ public class CrearController implements Initializable {
     */
     
     @FXML
-private String openFileChooser(ActionEvent event) {
+    private void openFileChooser(ActionEvent event) {
     FileChooser fileChooser = new FileChooser();
-    fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos de texto (*.txt)", "*.txt"));
+    fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos de texto (*.txt)", "*.pdf"));
     
     // Show the file chooser dialog
     Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
@@ -86,11 +89,8 @@ private String openFileChooser(ActionEvent event) {
     
     // If a file was selected, return its name
     if (selectedFile != null) {
-        return selectedFile.getName();  // Get only the file name
+        nombreA = selectedFile.getName();  // Get only the file name
     }
-    
-    // If no file was selected, return null or an empty string
-    return null;
 }
 
             
