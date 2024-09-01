@@ -30,8 +30,6 @@ public class AdminController implements Initializable {
     @FXML
     Button actualizar;
     @FXML
-    Button borrar;
-    @FXML
     Button salir;
     
     @Override

@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 public class BorrarController implements Initializable {
 
     @FXML
-    ComboBox idBorrar;
+    TextField idBorrar;
     @FXML
     Button borrar;
     @FXML
