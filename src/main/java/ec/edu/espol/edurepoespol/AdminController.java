@@ -16,6 +16,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
@@ -29,13 +32,21 @@ public class AdminController implements Initializable {
     Button crear;
     @FXML
     Button actualizar;
-
+    @FXML
+    BorderPane bp;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        init();
     }    
-    
+    public void init() {
+        Image image = new Image(getClass().getResourceAsStream("/img/fondo.jpg"));
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(680);
+        imageView.setFitHeight(480);
+        bp.getChildren().add(0, imageView); // Agregar imagen al fondo    
+    }
     @FXML
     public void setSceneDelete(ActionEvent event){
         try {

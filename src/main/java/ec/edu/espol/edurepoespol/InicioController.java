@@ -90,7 +90,7 @@ public class InicioController {
             ResultSet resultSet = statement.executeQuery();
 
             // Process the results
-            StringBuilder result = new StringBuilder("Files for Subject ID " + subjectId + ":\n");
+            StringBuilder result = new StringBuilder("Archivos disponibles: " + subjectId + ":\n");
             while (resultSet.next()) {
                 // Assuming 'file_name' is a column in your 'files' table
                 String fileName = resultSet.getString("nombre");

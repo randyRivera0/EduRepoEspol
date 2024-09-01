@@ -50,7 +50,7 @@
       </HBox>
    </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #444242; -fx-border-radius: 5; -fx-border-width: 5;" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #1d1e21; -fx-border-radius: 5; -fx-border-width: 5;" BorderPane.alignment="CENTER">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra todo el material de estudio que necesites aquí" textAlignment="CENTER">
                <font>
