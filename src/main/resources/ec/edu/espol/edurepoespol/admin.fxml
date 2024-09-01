@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.edurepoespol.AdminController">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.edurepoespol.AdminController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="68.0" prefWidth="600.0" style="-fx-background-color: #051f5f;" BorderPane.alignment="CENTER">
          <children>
@@ -22,14 +22,6 @@
                   <Insets left="15.0" />
                </HBox.margin>
             </ImageView>
-            <Button fx:id="salir" mnemonicParsing="false" onAction="#handleLoginButtonAction" style="-fx-background-color: #051f5f;" text="Salir" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold Italic" size="13.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="400.0" />
-               </HBox.margin>
-            </Button>
          </children>
       </HBox>
    </top>

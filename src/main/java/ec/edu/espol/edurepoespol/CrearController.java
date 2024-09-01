@@ -43,7 +43,7 @@ public class CrearController implements Initializable {
     private void handleLoginButtonAction(ActionEvent event) {
         try {
             // Cargar la ventana anterior desde su archivo FXML
-            Parent ventanaAnterior = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Parent ventanaAnterior = FXMLLoader.load(getClass().getResource("admin.fxml"));
 
             // Obtener el Stage actual
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();

@@ -43,13 +43,8 @@
                   <Font name="Arial Bold Italic" size="13.0" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets left="40.0" />
                </HBox.margin>
-            </Button>
-            <Button fx:id="salir" mnemonicParsing="false" onAction="#handleLoginButtonAction" style="-fx-background-color: #051f5f;" text="Salir" textFill="WHITE" underline="true">
-               <font>
-                  <Font name="Arial Bold Italic" size="13.0" />
-               </font>
             </Button>
          </children>
       </HBox>
