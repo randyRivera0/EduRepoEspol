@@ -38,6 +38,15 @@ public class AdminController implements Initializable {
     }    
     
     @FXML
+    public void setSceneDelete(ActionEvent event){
+        try {
+            App.setRoot("borrar");
+        } catch (IOException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
     public void setSceneCrear(ActionEvent event){
         try {
             App.setRoot("crear");

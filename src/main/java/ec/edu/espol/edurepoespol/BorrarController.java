@@ -42,7 +42,7 @@ public class BorrarController implements Initializable {
     @FXML
     private void deleteFile(){
         FileDAO fileDAO = new FileDAO();
-        fileDAO.delete(Integer.parseInt(borrar.getText()));
+        fileDAO.delete(Integer.parseInt(idBorrar.getText()));
     }
     
     @FXML

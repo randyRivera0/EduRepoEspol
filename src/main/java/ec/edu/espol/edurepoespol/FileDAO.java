@@ -75,7 +75,7 @@ public class FileDAO implements DAO<File> {
     // Delete User
     @Override
     public void delete(int actorId) {
-        String query = "DELETE FROM actor WHERE actor_id = ?";
+        String query = "DELETE FROM archivo WHERE idArchivo = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, actorId);
             stmt.executeUpdate();
