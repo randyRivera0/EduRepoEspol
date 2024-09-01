@@ -11,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.edurepoespol.CrearController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.edurepoespol.CrearController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="600.0" style="-fx-background-color: #051f5f;" BorderPane.alignment="CENTER">
          <children>
@@ -43,7 +42,7 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Materia:">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
@@ -51,7 +50,7 @@
                   <Font name="Arial" size="13.0" />
                </font>
             </Text>
-            <TextField fx:id="materia">
+            <TextField fx:id="nombre">
                <VBox.margin>
                   <Insets left="150.0" right="150.0" top="5.0" />
                </VBox.margin>
@@ -85,7 +84,7 @@
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="crear" mnemonicParsing="false" style="-fx-background-color: #051f5f;" text="CREAR" textFill="WHITE">
+            <Button fx:id="crear" mnemonicParsing="false" onAction="#insertFile" style="-fx-background-color: #051f5f;" text="CREAR" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="16.0" />
                </font>

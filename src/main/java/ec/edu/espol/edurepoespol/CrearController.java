@@ -24,7 +24,7 @@ import javafx.stage.Stage;
 public class CrearController implements Initializable {
 
     @FXML
-    TextField materia;
+    TextField nombre;
     @FXML
     TextField codigo;
     @FXML
@@ -56,4 +56,12 @@ public class CrearController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    @FXML
+    private void insertFile(ActionEvent event){
+        File file = new File(nombre.getText(), codigo.getText(), "101");
+        FileDAO fileDAO = new FileDAO();
+        fileDAO.insert(file);
+    }
+            
 }

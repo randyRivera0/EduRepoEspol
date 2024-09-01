@@ -38,6 +38,13 @@ public class BorrarController implements Initializable {
         // TODO
     }    
     
+    
+    @FXML
+    private void deleteFile(){
+        FileDAO fileDAO = new FileDAO();
+        fileDAO.delete(Integer.parseInt(borrar.getText()));
+    }
+    
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
         try {
