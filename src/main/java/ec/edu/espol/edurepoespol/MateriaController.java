@@ -47,10 +47,15 @@ public class MateriaController implements Initializable {
         // TODO
     }    
     
-    public void initializeData(String data){
+    public void initializeData(String data, String materia, String codigo){
         Text text = new Text(data);
         text.setWrappingWidth(400);      // Set wrapping width for the text
         textFlowFiles.getChildren().add(text);
+        
+    nombreMateria.setText(materia);
+    
+    codigoMateria.setText(codigo);
+        
     }
     
     @FXML
