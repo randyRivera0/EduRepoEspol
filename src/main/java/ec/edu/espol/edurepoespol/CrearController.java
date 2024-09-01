@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -63,5 +64,34 @@ public class CrearController implements Initializable {
         FileDAO fileDAO = new FileDAO();
         fileDAO.insert(file);
     }
+    
+    /*
+    @FXML
+    private java.io.File openFileChooser(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos de texto (*.txt)", "*.txt"));
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        return fileChooser.showOpenDialog(stage);
+    }
+    */
+    
+    @FXML
+private String openFileChooser(ActionEvent event) {
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos de texto (*.txt)", "*.txt"));
+    
+    // Show the file chooser dialog
+    Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+    File selectedFile = fileChooser.showOpenDialog(stage);
+    
+    // If a file was selected, return its name
+    if (selectedFile != null) {
+        return selectedFile.getName();  // Get only the file name
+    }
+    
+    // If no file was selected, return null or an empty string
+    return null;
+}
+
             
 }
