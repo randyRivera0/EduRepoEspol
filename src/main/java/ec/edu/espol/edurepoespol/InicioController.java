@@ -1,10 +1,12 @@
 package ec.edu.espol.edurepoespol;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class InicioController {
@@ -31,7 +37,17 @@ public class InicioController {
     @FXML
     Button misDescargas;
     @FXML
-    Button salir;
+    BorderPane bp;
+
+
+    public void initialize() {
+        Image image = new Image(getClass().getResourceAsStream("/img/fondo.jpg"));
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(680);
+        imageView.setFitHeight(480);
+        bp.getChildren().add(0, imageView); // Agregar imagen al fondo    
+    }
+
 
     @FXML
     private void switchToSecondary() throws IOException {
@@ -40,6 +56,7 @@ public class InicioController {
     
     @FXML
     private void handleSearchFiles() throws IOException {
+        initialize();
         String subjectId = codigo.getText();
         if (subjectId.isEmpty()) {
             showAlert("Error", "Subject ID cannot be empty.");
@@ -113,22 +130,5 @@ public class InicioController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-    
-    @FXML
-    private void handleBackButtonAction(ActionEvent event) {
-        try {
-            // Cargar la ventana anterior desde su archivo FXML
-            Parent ventanaAnterior = FXMLLoader.load(getClass().getResource("login.fxml"));
-
-            // Obtener el Stage actual
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-
-            // Configurar la nueva escena
-            Scene scene = new Scene(ventanaAnterior);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+   
 }

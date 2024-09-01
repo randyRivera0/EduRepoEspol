@@ -40,8 +40,7 @@ public class MateriaController implements Initializable {
     TextFlow textFlowFiles;
     @FXML
     Button regresar;
-    @FXML
-    Button salir;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -72,21 +71,4 @@ public class MateriaController implements Initializable {
         }
     }
     
-    @FXML
-    private void handleLoginButtonAction(ActionEvent event) {
-        try {
-            // Cargar la ventana anterior desde su archivo FXML
-            Parent ventanaAnterior = FXMLLoader.load(getClass().getResource("login.fxml"));
-
-            // Obtener el Stage actual
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-
-            // Configurar la nueva escena
-            Scene scene = new Scene(ventanaAnterior);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

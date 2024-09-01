@@ -48,11 +48,9 @@
                <font>
                   <Font name="Arial Bold Italic" size="13.0" />
                </font>
-            </Button>
-            <Button fx:id="salir" mnemonicParsing="false" onAction="#handleBackButtonAction" style="-fx-background-color: #051f5f;" text="Salir" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold Italic" size="13.0" />
-               </font>
+               <HBox.margin>
+                  <Insets left="40.0" />
+               </HBox.margin>
             </Button>
          </children>
       </HBox>
